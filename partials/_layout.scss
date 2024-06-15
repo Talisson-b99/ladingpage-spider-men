@@ -1,0 +1,208 @@
+// classe auxiliares
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 36px 16px;
+
+  display: flex;
+  align-items: center;
+  height: 85vh;
+
+  overflow: hidden;
+
+  @include responsive() {
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+.container-item-1 {
+  max-width: 576px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.container-item-2 {
+  .spiderman {
+    width: 133%;
+    transform: translateX(-170px);
+
+    @include responsive() {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+
+  padding: 12px 32px;
+  border-radius: 3px;
+
+  transform: skew(-10deg);
+  background: linear-gradient(225deg, #ea1d22 0%, #b31317 100%);
+
+  position: relative;
+
+  transition: 0.7s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    opacity: 0;
+
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+
+    border-radius: 3px;
+
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+
+    transition: 0.7s ease;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    opacity: 0;
+
+    width: 20%;
+    height: 50%;
+
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+
+    border-radius: 3px;
+
+    border-right: 3px solid $white;
+    border-bottom: 3px solid $white;
+
+    transition: 0.7s ease;
+  }
+
+  &:hover {
+    transform: skew(-10deg) scale(105%);
+    &::after {
+      opacity: 1;
+      width: 30%;
+      height: 70%;
+    }
+    &::before {
+      opacity: 1;
+      width: 30%;
+      height: 70%;
+    }
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+
+  padding: 10px 32px;
+  border-radius: 3px;
+  border: 2px solid $red;
+
+  transform: skew(-10deg);
+  background: transparent;
+
+  position: relative;
+
+  transition: 0.7s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: -1px;
+
+    width: 0%;
+    height: 100%;
+
+    z-index: -1;
+
+    background: linear-gradient(225deg, #ea1d22 0%, #b31317 100%);
+
+    transition: 0.7s ease;
+  }
+
+  &:hover {
+    &::after {
+      width: 102%;
+    }
+    // height: 100%;
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    // z-index: 10;
+    background: linear-gradient(
+      101.47deg,
+      #0a0c10 26.38%,
+      rgba(10, 12, 16, 0.8) 50.07%,
+      #0a0c10 73.17%
+    );
+  }
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(225deg, $red 0%, $red-dark 100%);
+
+  overflow: hidden;
+}
