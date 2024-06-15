@@ -12,3 +12,5 @@ Este projeto é uma aplicação web desenvolvida utilizando HTML e SASS, com ani
 
 - **Design Responsivo**: A aplicação adapta-se a diferentes tamanhos de tela, proporcionando uma experiência de usuário consistente em dispositivos móveis, tablets e desktops.
 - **Animações Dinâmicas**: Implementação de animações sofisticadas utilizando GSAP, proporcionando uma interface mais atraente e interativa.
+
+![](captura-tela.png)
